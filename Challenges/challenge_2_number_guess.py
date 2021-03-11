@@ -11,10 +11,20 @@ import random
 
 def run_game():
     answer = random.randint(1, 20)
-
     print("I'm thinking of a number between 1 and 20")
 
-    guess = int(input("Guess a number: "))
+    count_number_of_tries =0
+    while (count_number_of_tries <4):
+        guess = int(input("Guess a number: "))
+        if(guess==answer):
+            print("You got it right")
+            return
+        elif(guess>answer):
+            print("Guess lower")
+        else:
+            print("Guess higher")
+        count_number_of_tries = count_number_of_tries+1
+    print("the random number was "+str(answer))
 
 
 run_game()
